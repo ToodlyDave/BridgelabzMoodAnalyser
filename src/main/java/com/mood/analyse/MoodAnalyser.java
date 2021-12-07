@@ -13,11 +13,15 @@ public class MoodAnalyser {
 		this.message = message;
 	}
 
-	public String moodAnalyse() {
-
-		String words[] = message.split(" ");
-		if (words[3].equalsIgnoreCase("sad"))
-			return "SAD";
-		return "HAPPY";
+	public String moodAnalyse() throws NullPointerException{
+		try {
+			String words[] = message.split(" ");
+			if (words[3].equalsIgnoreCase("sad"))
+				return "SAD";
+			return "HAPPY";
+		} catch (NullPointerException e) {
+			// TODO Auto-generated catch block
+			return "HAPPY";
+		}
 	}
 }
