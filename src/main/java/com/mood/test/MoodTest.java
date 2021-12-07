@@ -5,6 +5,7 @@ import static org.junit.Assert.assertEquals;
 import org.junit.Test;
 
 import com.mood.analyse.MoodAnalyser;
+import com.mood.exception.MoodAnalysisException;
 
 public class MoodTest {
 
@@ -22,7 +23,11 @@ public class MoodTest {
 
 	}
 
-	
-	
+	@Test(expected = MoodAnalysisException.class)
+	public void moodNull() throws Exception {
+		MoodAnalyser mood = new MoodAnalyser();
+		mood.moodAnalyse();
+
+	}
 
 }
